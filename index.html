@@ -3,28 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burgera Mednieki</title>
+<title>Burgera Mednieks</title>
 <style>
+/* Pamata izkārtojums — šīs rindas nemaini */
 body { font-family: Arial, sans-serif; max-width: 680px; margin: 24px auto; padding: 16px; line-height: 1.6; }
-button, input { font: inherit; padding: 10px; margin: 4px; }
-button { cursor: pointer; }
-img { max-width: 100%; height: auto; }
+button, input { font: inherit; padding: 10px 16px; margin: 6px 0; cursor: pointer; }
+img, audio { max-width: 100%; }
 [hidden] { display: none !important; }
-body { background-color: #edf5ff; color: #17212b; }
-button { background-color: #e41010; color: white; border: 0; border-radius: 8px; }
-h1 { text-align: center; }
+
+/* NOFORMĒ ŠEIT: pielieto 2.1. un 2.2. nodarbībā apgūto CSS */
+body {
+  background-color: #ffffff;
+  color: #0989d3;
+}
+
+h1 {
+  color: #ff0000;
+  font-size: 36px;
+  text-align: center;
+}
+
+.noteikumi {
+  background-color: #f1f5f9;
+  color: #c011a3;
+  padding: 20px;
+  border-radius: 12px;
+  border: dashed;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.laukums {
+  width: 360px;
+  padding: 12px;
+  border: 2px solid #94a3b8;
+  background-color: #f8fafc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #1ecf07;
+  color: #ffffff;
+  border-radius: 8px;
+  border: 0;
+}
 </style>
 </head>
 <body>
-<h1>Burgera mednieks</h1>
-<p>Savāc piecas burgeru. Spied uz burgera, lai iegūtu punktus.</p>
-<img src="atteli/varonis.png" alt="Burgers" width="128">
-<p>Uzvaras skaņa:</p>
-<audio controls src="skanas/klikskis.wav"></audio>
-<p id="punkti">Punkti: 0</p>
-<button onclick="savakt()">Savākt burgeri</button>
+<h1>Burgera Mednieks</h1>
+<p>Savāc 5 punktus lai uzvarētu.</p>
+<section class="noteikumi">
+  <h2>Noteikumi</h2>
+  <p>Punktus iegūsti spiežot uz Burgera</p>
+  <p>Saņemot punktu spēle iztrādā skaņu.</p>
+</section>
+<div class="laukums">
+  <h2>Spēles laukums</h2>
+  <img src="atteli/varonis.svg" alt="Burgers" width="128">
+  <p>Skaņas efekta nozīme spēlē:</p>
+  <audio controls src="skanas/klikskis.wav"></audio>
+  <p id="punkti">Punkti: 0</p>
+  <button onclick="savakt()">Savākt punktu</button>
+</div>
 <script>
-// Gatava poga. Šajā tēmā mācies noformēt lapu un sakārtot failus.
+// Gatava punktu poga — šo skriptu nemaini.
 let punkti = 0;
 function savakt() {
   punkti = punkti + 1;
